@@ -16,6 +16,14 @@ namespace Project.ENTITIES.Models
         public string Email { get; set; }
         public UserRole Role { get; set; }
 
+
+
+        public AppUser()
+        {
+            Role = UserRole.Member;
+            ActivationCode= Guid.NewGuid();
+        }
+
         //Relational Properties
         public virtual AppUserProfile Profile { get; set; }
         public virtual List<Order> Orders { get; set; }
